@@ -4,7 +4,15 @@ Our team aims to analyze the different crime rates in Charlotte, NC, in order to
 ### Intsallation
 
 ### Dependencies
-
+datetime, pandas, json, pprint, logging, pymongo, MongoClient
+```python
+from datetime import datetime
+import pandas as pd
+import json
+import pprint
+import logging
+from pymongo import MongoClient
+```
 ### Data Processing
 
 
