@@ -14,17 +14,44 @@
         <!--Plotly Library-->
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 	</head>
 	
 	<body>
-		<center>
-			<h1>Charlotte Crime Data Analysis</h1>
-			
-			<script src="jszip.js"></script>
-            <script src="visuals.js"></script>
+		
+        <div class="container">
+            <div class="row">
+              <div class="col-md-12 jumbotron text-center">
+                <h1>Charlotte Crime Incidents Data Analysis</h1>
+                <p>Use the interactive charts below to explore the dataset</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2">
+                <div class="well">
+                  <h5>Case Status:</h5>
+                  <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                </div>
+                <div class="panel panel-primary">
+                    <center><a href="clusterMap.html">Map of Charlotte Crime Incidents</a></center>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div id="sunburst"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div id="bar"></div>
+              </div>
+            </div>
+        </div>
+		
+        <script src="dataset/data01.js"></script>
+        <script src="visuals.js"></script>
 
-            <a href="clusterMap.html">Map of Charlotte Crime Incidents</a><br>
-			
+        <center>
 			<hr>
 			<em>Copyright &copy; 2024 UNC Charlotte Data Analytics Bootcamp</em>			
 		</center>
