@@ -131,21 +131,24 @@ function pieCharts(input){
             domain: {column: 0},
             name: "Location Type",
             hoverinfo: "label+percent+name",
-            type: "pie"
+            type: "pie",
+            outsidetextfont: { color: "transparent" }
         },{
             values: placeDescCounts,
             labels: placeDescLabels,
             domain: {column: 1},
             name: "Place<br>Description",
             hoverinfo: "label+percent+name",
-            type: "pie"
+            type: "pie",
+            outsidetextfont: { color: "transparent" }
         },{
             values: placeDetailCounts,
             labels: placeDetailLabels,
             domain: {column: 2},
             name: "Place Details",
             hoverinfo: "label+percent+name",
-            type: "pie"
+            type: "pie",
+            outsidetextfont: { color: "transparent" }
         }
     ];
 
