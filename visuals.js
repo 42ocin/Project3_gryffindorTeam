@@ -15,24 +15,36 @@ for (var k = 0; k < clearanceStatusOptions.length; k++) {
 
 // define function to create bar chart based on clearance status
 function barChart(input){
-    // subset by dataset, filtering for "Highest_NIBRS_DESCRIPTION" set to 'input'
+	// subset by dataset, filtering for "CLEARANCE_STATUS" set to 'input'
 	let selected = [input]
 	const subset = data01.filter(({
-	  HIGHEST_NIBRS_DESCRIPTION
-	}) => selected.includes(HIGHEST_NIBRS_DESCRIPTION));
+	  CLEARANCE_STATUS
+	}) => selected.includes(CLEARANCE_STATUS));
 	
 	// Get variables for barChart
-	let location_type = subset.map(result => result.LOCATION_TYPE_DESCRIPTION)
-	location_counts = {};
-	for(var i=0; i<location_type.length; i++){
-		let place = location_type[i];
-		location_counts[place] = location_counts[place] ? location_counts[place] +1:1;
+	let incident_types = subset.map(result => result.HIGHEST_NIBRS_DESCRIPTION)
+	incident_counts = {};
+	for(var i=0; i<incident_types.length; i++){
+		let place = incident_types[i];
+		incident_counts[place] = incident_counts[place] ? incident_counts[place] +1:1;
 	};
+	
+	// Function from [https://www.geeksforgeeks.org/how-to-sort-a-dictionary-by-value-in-javascript/]
+	function sortDictByValue(dict) {
+	  return Object.keys(dict)
+		.sort((a, b) => dict[b] - dict[a])
+		.reduce((acc, key) => {
+		  acc[key] = dict[key];
+		  return acc;
+		}, {});
+	}
+	
+	incident_counts_sorted = sortDictByValue(incident_counts);
 	
 	// Set up barChart
 	let barChart_trace = {
-		x: Object.keys(location_counts),
-		y: Object.values(location_counts),
+		x: Object.keys(incident_counts_sorted),
+		y: Object.values(incident_counts_sorted),
 		type: "bar"
 	}
 	
