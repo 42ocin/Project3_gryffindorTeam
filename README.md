@@ -15,13 +15,15 @@ from pymongo import MongoClient
 ```
 ### Data Processing
 
-
+### Data Storing
+### Coding Approach
 ### Features
 ## Drop Down
 ## Bar Chart
-## Hyperlink
-## Sunburst Chart
+## Pie Chart
+## Mapping
 
 ### Documentation
 [(https://data.charlottenc.gov/datasets/d22200cd879248fcb2258e6840bd6726_0/explore?location=35.261109%2C-80.809400%2C9.97)]
 ### Conclusion
+Crime analysis is used to improve policing and help the community find safer areas to live in.
